@@ -25,7 +25,6 @@ class Token {
         next()
       })
     } catch (error) {
-      console.log(error);
       return res.status(500).json({ type: false, message: 'Internal server error' });
     }
   }

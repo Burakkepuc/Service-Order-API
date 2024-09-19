@@ -102,7 +102,6 @@ class OrdersService {
       return { type: true, data: orders, message: 'Orders get  successfully' }
 
     } catch (error) {
-      console.log(error);
       return { type: false, message: 'An error occurred by getting orders' };
 
     }
@@ -117,7 +116,6 @@ class OrdersService {
       return { type: true, data: updated, message: 'Orders status updated successfully' }
 
     } catch (error) {
-      console.log(error);
       return { type: false, message: 'An error occurred by update order status' };
 
     }

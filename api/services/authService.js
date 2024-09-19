@@ -28,7 +28,6 @@ class AuthService {
         message: 'User Created Successfully'
       }
     } catch (error) {
-      console.log(error);
       return { type: false, message: 'An error occurred during registration' };
     }
   }
