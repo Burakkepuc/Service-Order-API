@@ -28,6 +28,7 @@ class AuthService {
         message: 'User Created Successfully'
       }
     } catch (error) {
+      console.log(error);
       return { type: false, message: 'An error occurred during registration' };
     }
   }
@@ -38,13 +39,11 @@ class AuthService {
 
       const checkUser = await db.Users.findOne({ where: { email } })
 
-      console.log(1);
       if (!checkUser) {
         return { type: false, message: 'User Not Found.' }
       }
 
       const comparePassword = bcrypt.compareSync(password, checkUser.password)
-      console.log(2);
       if (!comparePassword) {
         return { type: false, message: 'Username or password is not correct. Please Check.' }
       }

@@ -11,7 +11,6 @@ class Token {
       if (!auth) return res.status(401).json({ type: false, message: 'No authorization header provided' });
 
       const token = auth && auth.split(' ')[1]
-
       if (!token) return res.status(401).json({ type: false, message: 'No token provided' });
 
       jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
